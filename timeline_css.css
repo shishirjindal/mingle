@@ -1,0 +1,118 @@
+*{
+	margin:0px;
+	padding:0px;
+	font-family: Catull;
+}
+body{
+	background-color: rgb(233,234,237);
+}
+.header{
+	background-color: rgb(70,120,180);
+	height: 60px;
+	border-bottom: 0px;
+	padding-left: auto;
+	padding-right: auto;
+	width: 100%;
+	position: fixed;
+	z-index: 2;
+}
+#wrapper{
+	margin-left: auto;
+	margin-right: auto;
+	width: 1000px;
+	padding-top: 0px;
+	padding-bottom: 0px;
+	position: fixed;
+}
+.logo{
+	width: 125px;
+	position: fixed;
+}
+.logo img{
+	width: 150px;
+	height: 40px;
+	margin-top: 8px;
+	margin-left: 140px;
+	position: fixed;
+}
+@media screen and (max-width: 1280px) {
+	#menu{
+		position: absolute;
+		top:0px;
+		right: 0px;
+		height: 37px;
+		padding-top: 19px;
+		margin-right: 4%;
+	}
+}
+@media screen and (min-width: 1280px) {
+	#menu{
+		position: absolute;
+		top:0px;
+		right: 0px;
+		height: 37px;
+		padding-top: 19px;
+		margin-right: 6%;
+		position: fixed;
+	}
+}
+#menu a{
+	color:white;
+	text-decoration: none;
+	font-size: 14px;
+	background-repeat: no-repeat;
+	padding-top: 19px;
+	padding-bottom: 22px;
+	padding-left: 10px;
+	padding-right: 10px;
+}
+#menu a:hover{
+	background-image: url(hover.jpg);
+}
+#search{
+	margin-top: 14px;
+	margin-left: 360px;
+}
+#search_bar{
+	width:500px;
+	background-color: rgb(70,120,180);
+	border: rgb(70,120,180);
+}
+input[type="submit"]{
+	background-color: rgb(70,120,180);
+	border-radius: 7px;
+	color:white;
+	border: 1px solid rgb(70,120,180);
+	padding: 5px;
+	width:80px;
+}
+input[type="text"],input[type="email"],input[type="password"]{
+	border: 1px solid #E2E2E2;
+	width: 300px;
+	height:	35px;
+	padding: 5px;
+	color:rgb(70,120,180);
+}
+input[type="text"]:hover,input[type="email"]:hover,input[type="password"]:hover{
+	border: 1px solid #006FC4;
+}
+#textarea1{
+	border: 1px solid #E2E2E2;
+	width: 300px;
+	height:	75px;
+	padding: 5px;
+	color:rgb(70,120,180);
+}
+#textarea1:hover{
+	border: 1px solid rgb(70,120,180);
+}
+#textarea{
+	border: 1px solid #E2E2E2;
+	width: 500px;
+	height:	75px;
+	padding: 6px;
+	color:rgb(70,120,180);
+}
+#textarea:hover{
+	border: 1px solid rgb(70,120,180);
+}

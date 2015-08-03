@@ -1,0 +1,74 @@
+*{
+	margin:0px;
+	padding:0px;
+	font-family: Catull;
+}
+body{
+	background-color: rgb(233,234,237);
+}
+img#logo{
+			margin-top: 5px;
+			margin-left:160px;
+			height: 40px;
+			width: 150px;
+			position:absolute;
+		}
+div#d01	{
+			margin-top:150px;
+			margin-left:250px;
+			position:absolute;
+			height:100px;
+			width:400px;
+		}
+div#d02	{
+			margin-top:160px;
+			margin-left:850px;
+			position:absolute;
+			height:360px;
+			width:400px;
+		}
+pre#pre01{
+			color:rgb(70,120,180);
+			font-size:15px;
+			position:absolute;
+			margin-left:5px;
+			margin-top:20px;
+		}
+pre#pre02{
+			color:rgb(70,120,180);
+			font-size:15px;
+			position:absolute;
+			margin-left:5px;
+			margin-top:10px;
+		}
+span#result{
+			color:rgb(70,120,180);
+			font-size:15px;
+			position:absolute;
+			margin-left:1180px;
+			margin-top:290px;
+		}
+input[type="text"],input[type="email"],input[type="password"]{
+	border: 1px solid #E2E2E2;
+	width: 300px;
+	height:	25px;
+	padding: 5px;
+	color:rgb(70,120,180);
+}
+input[type="text"]:hover,input[type="email"]:hover,input[type="password"]:hover{
+	border: 1px solid #006FC4;
+}
+input[type="submit"]{
+	background-color: rgb(70,120,180);
+	border-radius: 7px;
+	color:white;
+	border: 1px solid rgb(70,120,180);
+	padding: 5px;
+	width:80px;
+}
+#header{
+	background-color: rgb(70,120,180);
+	width:100%;
+	height: 60px;
+	position: absolute;
+}
