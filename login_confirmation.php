@@ -11,7 +11,8 @@ if(isset($_POST['E']) && isset($_POST['P']) && !empty($_POST['E']) && !empty($_P
 		{
 			if(mysql_num_rows($query_run) == NULL)
 				{
-					header('Location: please_log_in.html');
+					echo "heol";
+					//header('Location: please_log_in.html');
 				}
 			else
 				{

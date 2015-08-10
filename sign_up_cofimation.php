@@ -34,9 +34,9 @@ if(isset($_POST['FN']) && isset($_POST['LN']) && isset($_POST['E']) && isset($_P
 								margin-left:0px;
 								position:absolute;
 								height:50px;
-								width:1340px
+								width:1340px;
 								font-family:Catull;">
-							<pre style="color:rgb(70,120,180);font-size:35px;text-align:center;margin-top:5px">This Email is already registered.
+							<pre style="color:rgb(70,120,180);font-size:25px;text-align:center;margin-top:5px">This Email is already registered.
 Click <a href="index.php">here</a> to return.</pre>
 						</div>';
 		}
