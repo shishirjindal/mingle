@@ -1,9 +1,9 @@
 <?php
 	session_start();
 	require 'database_open.inc.php';
-	$email1 = $_COOKIE['email'];
+	$email1 = $_SESSION['email'];
 	$email2 = $_SESSION['click'];
-	$msg = $_POST['text'];
+	$msg = strip_tags($_POST['text']);
 
 	$table_name = $email1." to ".$email2;
 	$table_name1 = $email2." to ".$email1;

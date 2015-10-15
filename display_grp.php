@@ -6,7 +6,7 @@
 	session_start();
 	require 'database_open.inc.php';
 	$name = $_REQUEST['q'];
-	$email = $_COOKIE['email'];
+	$email = $_SESSION['email'];
 	$query = "SELECT `admin` FROM `group` WHERE name='$name'";
 	$query_run = mysql_query($query);
 	$data = mysql_fetch_assoc($query_run);
@@ -53,7 +53,7 @@
 							white-space: -webkit-pre-wrap;
 								word-wrap: break-word;
 								word-break: break-all;
-								white-space: normal;">You <img src="arrow.jpg" width="7px" height="10px"> '.$msg.'</pre>
+								white-space: normal;">You <img src="arrow.jpg" width="7px" height="10px"> '.htmlspecialchars($msg).'</pre>
 						</div><br><br><br>';
 		}
 		else
@@ -74,7 +74,7 @@
 								word-wrap: break-word;
 								word-break: break-all;
 								white-space: normal;">'
-							.$name.' <img src="arrow.jpg" width="7px" height="10px"> '.$msg.'</pre>
+							.$name.' <img src="arrow.jpg" width="7px" height="10px"> '.htmlspecialchars($msg).'</pre>
 						</div><br><br><br>';
 		}
 	}

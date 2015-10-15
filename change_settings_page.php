@@ -45,12 +45,12 @@
 </html>
 <?php
 session_start();
-if((isset($_COOKIE['email']) && !empty($_COOKIE['email'])) || (isset($_SESSION['email']) && !empty($_SESSION['email'])))
+if((isset($_SESSION['email']) && !empty($_SESSION['email'])))
 {
 	require 'database_open.inc.php';
 					if(isset($_POST['submit']))
 					{
-						$email = $_COOKIE['email'];
+						$email = $_SESSION['email'];
 						move_uploaded_file($_FILES['file']['tmp_name'],"Pictures/".$_FILES['file']['name']);
 						$query = "UPDATE `users` SET `image` = '".$_FILES['file']['name']."' WHERE `email`='$email'";
 						$query_run = mysql_query($query);

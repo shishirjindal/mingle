@@ -6,7 +6,7 @@
 		$name = $_POST['GN'];
 		$m1 = $_POST['M1'];
 		$m2 = $_POST['M2'];
-		$m3 = $_COOKIE['email'];
+		$m3 = $_SESSION['email'];
 
 		$query = "SELECT `Id` FROM `users` WHERE `email`='$m1'";
 		$query_run = mysql_query($query);

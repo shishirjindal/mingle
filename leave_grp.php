@@ -1,7 +1,7 @@
 <?php
 	session_start();
 	require 'database_open.inc.php';
-	$email = $_COOKIE['email'];
+	$email = $_SESSION['email'];
 	$q = $_SESSION['leave'];
 
 	$query = "SELECT `Id` FROM `users` WHERE `email`='$email'";

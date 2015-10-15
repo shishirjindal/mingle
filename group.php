@@ -33,24 +33,24 @@
 </html>
 <?php
 session_start();
-if((isset($_COOKIE['email']) && !empty($_COOKIE['email'])) || (isset($_SESSION['email']) && !empty($_SESSION['email'])))
+if((isset($_SESSION['email']) && !empty($_SESSION['email'])))
 {
 	if($_SESSION['grp'] == "id1")
 	{
-		echo '<div 	style="margin-top:450px;margin-left:400px;position:absolute;height:30px;width:300px">
-				<pre style="color:rgb(70,120,180);font-size:20px;margin-left:0px;margin-top:5px;font-family:Catull;">Group cannot be formed<br>Some members are not our user.</pre>
+		echo '<div 	style="margin-top:450px;margin-left:500px;position:absolute;height:30px;width:300px">
+				<pre style="color:rgb(70,120,180);font-size:26px;text-align:center;margin-top:5px;font-family:Catull;">     Group cannot be formed<br>Some members are not our user.</pre>
 				</div>';
 	}
 	else if($_SESSION['grp'] == "equal")
 	{
-		echo '<div 	style="margin-top:450px;margin-left:400px;position:absolute;height:30px;width:300px">
-				<pre style="color:rgb(70,120,180);font-size:20px;margin-left:0px;margin-top:5px;font-family:Catull;">Group cannot be formed<br>Group members should not be repeated.</pre>
+		echo '<div 	style="margin-top:450px;margin-left:500px;position:absolute;height:30px;width:300px">
+				<pre style="color:rgb(70,120,180);font-size:26px;text-align:center;margin-top:5px;font-family:Catull;">     Group cannot be formed<br>Group members should not be repeated.</pre>
 				</div>';
 	}
 	else if($_SESSION['grp'] == "name")
 	{
-		echo '<div 	style="margin-top:450px;margin-left:400px;position:absolute;height:30px;width:300px">
-				<pre style="color:rgb(70,120,180);font-size:20px;margin-left:0px;margin-top:5px;font-family:Catull;">Group cannot be formed<br>Group name is already taken.</pre>
+		echo '<div 	style="margin-top:450px;margin-left:500px;position:absolute;height:30px;width:300px">
+				<pre style="color:rgb(70,120,180);font-size:26px;text-align:center;margin-top:5px;font-family:Catull;">     Group cannot be formed<br>Group name is already taken.</pre>
 				</div>';
 	}
 }

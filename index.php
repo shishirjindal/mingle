@@ -1,13 +1,14 @@
 <?php
 session_start();
+session_unset();
+session_destroy();
 $_SESSION['flag'] = "";
 $_SESSION['rslt'] = "";
-$_SESSION['email'] = "";
 $_SESSION['like'] = "";
 $_SESSION['msg_send'] = false;
-if(isset($_COOKIE['email']) && !empty($_COOKIE['email']))
+if(isset($_SESSION['email']) && !empty($_SESSION['email']))
 {
-	header('Location: user_home_page.php');
+    header('Location:user_home_page.php');
 }
 ?>
 <!DOCTYPE html>

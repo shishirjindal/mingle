@@ -5,7 +5,7 @@
 	$query_run = mysql_query($query);
 	while($data = mysql_fetch_assoc($query_run))
 	{
-		if($data['email'] != $_COOKIE['email'])
+		if($data['email'] != $_SESSION['email'])
 		{
 			$name = $data['name'];
 			$email = $data['email'];

@@ -2,7 +2,7 @@
 	session_start();
 	require 'database_open.inc.php';
 	$q = $_REQUEST['q'];
-	$email = $_COOKIE['email'];
+	$email = $_SESSION['email'];
 
 	$query3 = "SELECT `likes`,`people` FROM `status` WHERE `Id`='$q'";
 	$query_run3 = mysql_query($query3);

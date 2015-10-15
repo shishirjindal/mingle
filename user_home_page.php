@@ -77,7 +77,7 @@
 			}
 			else
 			{
-				$email = $_COOKIE['email'];
+				$email = $_SESSION['email'];
 			} 
 			echo $email;
 		?>">
@@ -89,7 +89,7 @@
 			}
 			else
 			{
-				$email = $_COOKIE['email'];
+				$email = $_SESSION['email'];
 			}
 			$query1 = "SELECT `First Name`,`image` FROM `users` WHERE `email`='$email'";
 			$query_run1 = mysql_query($query1);
@@ -138,30 +138,9 @@
 <?php
 require 'database_open.inc.php';
 $_SESSION['grp'] = "";
-if((isset($_COOKIE['email']) && !empty($_COOKIE['email'])) || (isset($_SESSION['email']) && !empty($_SESSION['email'])))
+if((isset($_SESSION['email']) && !empty($_SESSION['email'])))
 {
-if(!isset($_COOKIE['email']) || empty($_COOKIE['email']))
-{
-	$time = time()+60*60*24*30*12;
 	$email = $_SESSION['email'];
-	setcookie('email',$email,$time);
-	$query1 = "SELECT `First Name`,`Last Name` FROM `users` WHERE email='$email'";
-					$query_run1 = mysql_query($query1);
-					$query_data = mysql_fetch_assoc($query_run1);
-					echo '<div 	style="
-								margin-top:355px;
-								margin-left:0px;
-								position:fixed;
-								height:50px;
-								width:180px;
-								z-index:1;">
-							<pre style="color:rgb(70,120,180);font-size:35px;margin-left:40px;margin-top:5px">'
-							.$query_data['First Name'].' '.$query_data['Last Name'].'</pre>
-						</div>';
-}
-if(isset($_COOKIE['email']) && !empty($_COOKIE['email']))
-{
-	$email = $_COOKIE['email'];
 	$query1 = "SELECT `First Name`,`Last Name` FROM `users` WHERE email='$email'";
 					$query_run1 = mysql_query($query1);
 					$query_data1 = mysql_fetch_assoc($query_run1);
@@ -176,7 +155,7 @@ if(isset($_COOKIE['email']) && !empty($_COOKIE['email']))
 							<pre style="color:rgb(70,120,180);font-size:35px;margin-left:40px;margin-top:5px">'
 							.$query_data1['First Name'].' '.$query_data1['Last Name'].'</pre>
 						</div>';
-}
+
 	$query3 = "SELECT `Id`,`image` FROM `users` WHERE email='$email'";
 	$query_run3 = mysql_query($query3);
 	$query_data3 = mysql_fetch_assoc($query_run3);
@@ -270,7 +249,7 @@ if(isset($_COOKIE['email']) && !empty($_COOKIE['email']))
 									</div>
 									<br><hr>
 									<div style="padding-top:5px;padding-left:5px;">
-										<pre style="color:rgb(70,120,180);font-size:15px;margin-top:0px;margin-left:10px;position:absolute;padding-bottom:5px;">'.$post.'</pre>
+										<pre style="color:rgb(70,120,180);font-size:15px;margin-top:0px;margin-left:10px;position:absolute;padding-bottom:5px;">'.htmlspecialchars($post).'</pre>
 									</div>
 								</div><br><br><br><br><br><br><br><br><br>';
 						}

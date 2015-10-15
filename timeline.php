@@ -108,11 +108,11 @@
 </html>
 <?php
 	session_start();
-if((isset($_COOKIE['email']) && !empty($_COOKIE['email'])) || (isset($_SESSION['email']) && !empty($_SESSION['email'])))
+if((isset($_SESSION['email']) && !empty($_SESSION['email'])))
 {	
 	require 'database_open.inc.php';
 	$email = $_GET['u'];
-	$email_blocked = $_COOKIE['email'];
+	$email_blocked = $_SESSION['email'];
 
 	$query = "SELECT `block` FROM `users` WHERE `email`='$email'";
 	$query_run = mysql_query($query);
@@ -150,7 +150,7 @@ if((isset($_COOKIE['email']) && !empty($_COOKIE['email'])) || (isset($_SESSION['
 	$id3 = $query_data1['Id'];
 	$dob = $query_data1['Birthday'];
 
-	$email2 = $_COOKIE['email'];
+	$email2 = $_SESSION['email'];
 	$query10 = "SELECT `Id` FROM `users` WHERE `email`='$email2'";
 	$query_run10 = mysql_query($query10);
 	$query_data10 = mysql_fetch_assoc($query_run10);
@@ -246,7 +246,7 @@ if((isset($_COOKIE['email']) && !empty($_COOKIE['email'])) || (isset($_SESSION['
 									</div>
 									<br><hr>
 									<div style="padding-top:5px;padding-left:5px;">
-										<pre style="color:rgb(70,120,180);font-size:15px;margin-top:0px;margin-left:10px;position:absolute;padding-bottom:5px;">'.$post.'</pre>
+										<pre style="color:rgb(70,120,180);font-size:15px;margin-top:0px;margin-left:10px;position:absolute;padding-bottom:5px;">'.htmlspecialchars($post).'</pre>
 									</div>
 								</div><br><br><br><br><br><br><br><br><br>';
 						}

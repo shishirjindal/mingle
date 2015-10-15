@@ -3,8 +3,8 @@ session_start();
 require 'database_open.inc.php';
 	if(isset($_POST['E']) && !empty($_POST['E']) && isset($_POST['M']) && !empty($_POST['M']))
 	{
-		$to_email = $_POST['E'];
-		$from_email = $_COOKIE['email'];
+		$to_email = mysql_real_escape_string($_POST['E']);
+		$from_email = $_SESSION['email'];
 		$query = "SELECT `email` FROM `users`";
 		$query_run = mysql_query($query);
 		$flag = false;
@@ -50,9 +50,10 @@ require 'database_open.inc.php';
 				$query_run15 = mysql_query($query15);
 				$query_data15 = mysql_fetch_assoc($query_run15);
 				$name2 = $query_data15['First Name'];
-				$query4 = "INSERT INTO `".$table_name."` (fromUser,toUser,message) VALUES ('".$name2."','".$name1."','".$_POST['M']."')";
+                                $msg = $_POST['M'];
+				$query4 = "INSERT INTO `".$table_name."` (fromUser,toUser,message) VALUES ('".$name2."','".$name1."','".htmlspecialchars($msg)."')";
 				$query_run4 = mysql_query($query4);
-				$query9 = "INSERT INTO `".$table_name1."` (fromUser,toUser,message) VALUES ('".$name2."','".$name1."','".$_POST['M']."')";
+				$query9 = "INSERT INTO `".$table_name1."` (fromUser,toUser,message) VALUES ('".$name2."','".$name1."','".htmlspecialchars($msg)."')";
 				$query_run9 = mysql_query($query9);
 				$_SESSION['flag'] = "sent";
 				$flag2 = true;

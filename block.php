@@ -5,7 +5,7 @@
 	if(isset($_POST['BK']) && !empty($_POST['BK']))
 	{
 		$q = $_POST['BK'];
-		$email = $_COOKIE['email'];
+		$email = $_SESSION['email'];
 
 		$query3 = "SELECT `follow`,`block`,`Id` FROM `users` WHERE `email`='$email'";
 		$query_run3 = mysql_query($query3);

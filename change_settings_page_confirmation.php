@@ -1,7 +1,7 @@
 <?php
 require 'database_open.inc.php';
 session_start();
-$email = $_COOKIE['email'];
+$email = $_SESSION['email'];
 if(isset($_POST['FN']) && !empty($_POST['FN']))
 {
 	$firstname = $_POST['FN'];

@@ -8,7 +8,7 @@
 	session_start();
 	require 'database_open.inc.php';
 
-	$user1 = $_COOKIE['email'];
+	$user1 = $_SESSION['email'];
 	$user2 = $_REQUEST['q'];
 	$_SESSION['msg_send'] = true;
 
@@ -54,7 +54,7 @@
 							white-space: -webkit-pre-wrap;
 								word-wrap: break-word;
 								word-break: break-all;
-								white-space: normal;">You <img src="arrow.jpg" width="7px" height="10px"> '.$msg.'</pre>
+								white-space: normal;">You <img src="arrow.jpg" width="7px" height="10px"> '.htmlspecialchars($msg).'</pre>
 						</div><br><br><br>';
 			}
 			else
@@ -77,7 +77,7 @@
 								word-wrap: break-word;
 								word-break: break-all;
 								white-space: normal;">'
-							.$from.' <img src="arrow.jpg" width="7px" height="10px"> '.$msg.'</pre>
+							.$from.' <img src="arrow.jpg" width="7px" height="10px"> '.htmlspecialchars($msg).'</pre>
 						</div><br><br><br>';
 			}
 		} 
@@ -112,7 +112,7 @@
 							white-space: -webkit-pre-wrap;
 								word-wrap: break-word;
 								word-break: break-all;
-								white-space: normal;">You <img src="arrow.jpg" width="7px" height="10px"> '.$msg.'</pre>
+								white-space: normal;">You <img src="arrow.jpg" width="7px" height="10px"> '.htmlspecialchars($msg).'</pre>
 						</div>';
 						echo '<br><br><br>';
 						
@@ -139,7 +139,7 @@
 								word-wrap: break-word;
 								word-break: break-all;
 								white-space: normal;">'
-							.$from.' <img src="arrow.jpg" width="7px" height="10px"> '.$msg.'</pre>
+							.$from.' <img src="arrow.jpg" width="7px" height="10px"> '.htmlspecialchars($msg).'</pre>
 						</div>';
 				echo '<br><br><br>';
 			}

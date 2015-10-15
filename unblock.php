@@ -2,7 +2,7 @@
 	session_start();
 	require 'database_open.inc.php';
 	$q = $_POST['UB'];
-	$email = $_COOKIE['email'];
+	$email = $_SESSION['email'];
 
 	$query3 = "SELECT `block` FROM `users` WHERE `email`='$email'";
 	$query_run3 = mysql_query($query3);

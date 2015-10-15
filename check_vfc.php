@@ -7,7 +7,7 @@
 <div class="header">
 <div id="wrapper">
 	<div class="logo">
-		<a href="user_home_page.php"><img src="mingle.png" alt="image not displayed"/></a>
+		<img src="mingle.png" alt="image not displayed"/>
 	</div>
 	<div id="menu">
 		<a href="index.php">Sign Up</a>
@@ -20,7 +20,7 @@
 	require 'database_open.inc.php';
 	if(isset($_POST['VC']) && !empty($_POST['VC']))
 	{
-		$vfc = $_POST['VC'];
+		$vfc = mysql_real_escape_string($_POST['VC']);
 		$email = $_SESSION['vce_email'];
 		$query = "SELECT `vce` FROM `users` WHERE email='$email'";
 		$query_run = mysql_query($query);

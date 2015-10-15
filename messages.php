@@ -1,3 +1,13 @@
+<?php
+session_start();
+if((isset($_SESSION['email']) && !empty($_SESSION['email'])))
+{
+
+}
+else{
+	header('Location: please_log_in.html');
+}
+?>
 <html>
 <head>
 <link rel="shortcut icon" type="image/x-icon" href="site_logo.png"/>
@@ -73,11 +83,10 @@
 </body>
 </html>
 <?php
-//session_start();
 	require 'database_open.inc.php';
-if((isset($_COOKIE['email']) && !empty($_COOKIE['email'])) || (isset($_SESSION['email']) && !empty($_SESSION['email'])))
+if((isset($_SESSION['email']) && !empty($_SESSION['email'])))
 {
-	$email = $_COOKIE['email'];
+	$email = $_SESSION['email'];
 	$query = "SELECT `toUser`,`fromUser` FROM `chat_name`";
 	$query_run = mysql_query($query);
 	$flag = false;

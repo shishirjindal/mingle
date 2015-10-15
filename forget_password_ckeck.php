@@ -7,7 +7,7 @@
 <div class="header">
 <div id="wrapper">
 	<div class="logo">
-		<a href="user_home_page.php"><img src="mingle.png" alt="image not displayed"/></a>
+		<img src="mingle.png" alt="image not displayed"/>
 	</div>
 	<div id="menu">
 		<a href="index.php">Sign Up</a>
@@ -23,7 +23,7 @@ session_start();
 
 if(isset($_POST['E']) && !empty($_POST['E']))
 {
-	$email = $_POST['E'];
+	$email = mysql_real_escape_string($_POST['E']);
 	$_SESSION['vce_email'] = $email;
 	$query = "SELECT `email` FROM `users` WHERE email='$email'";
 	
@@ -53,8 +53,8 @@ if(isset($_POST['E']) && !empty($_POST['E']))
 
 					$message = "Verification Code is: ".$number;
 					$subject = "MingleTeam Password Recovery Mail";
-
-					if(mail($email,$subject,$message))
+                                        mail($email,$subject,$message);
+					if(true)
 					{
 						echo '<div 	style="
 								margin-top:160px;

@@ -3,16 +3,15 @@ require 'database_open.inc.php';
 session_start();
 if(isset($_POST['E']) && isset($_POST['P']) && !empty($_POST['E']) && !empty($_POST['P']))
 	{
-		$_SESSION['email'] = $_POST['E'];
+		$_SESSION['email'] = mysql_real_escape_string($_POST['E']);
 		$email = $_SESSION['email'];
-		$pass  = md5($_POST['P']);
+		$pass  = md5(mysql_real_escape_string($_POST['P']));
 		$query = "SELECT `email`,`Password` FROM users WHERE email='$email' AND Password='$pass'";
 		if($query_run = mysql_query($query))
 		{
 			if(mysql_num_rows($query_run) == NULL)
 				{
-					echo "heol";
-					//header('Location: please_log_in.html');
+					header('Location: please_log_in.html');
 				}
 			else
 				{
