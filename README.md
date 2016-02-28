@@ -5,7 +5,7 @@
 
 ### ScreenShots
 
-> ![ScreenShot](/Pictures/mingle.png "arrow")
+> ![ScreenShot](/Pictures/mingle.png "mingle")
 
 ### Current Features
 > Personal Chat
